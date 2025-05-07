@@ -1,0 +1,10 @@
+[Unit]
+Description=Auto-Login to WiFi
+After=network.target
+
+[Service]
+ExecStart=/sbin/wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
