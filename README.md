@@ -32,7 +32,9 @@ README.poky.md
 	(OR)
 	DISTRO_FEATURES:remove = " systemd"
 	VIRTUAL-RUNTIME_init_manager = "sysvinit"
-
+6. sudo apparmor_parser -R /etc/apparmor.d/unprivileged_userns
+7. bitbake core-image-minimal -c cleanall
+8. bitbake core-image-minimal
 
 ----------------------Flash Image on Memory Card-----------------------------
 
