@@ -38,9 +38,10 @@ README.poky.md
 
 ----------------------Flash Image on Memory Card-----------------------------
 
-1. bzip2 -d -f core-image-minimal-raspberrypi5.rootfs.wic.bz2
-2. cd build/tmp/deploy/images/raspberrypi5/
-3. sudo dd if=core-image-minimal-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
+1. lsblk; sudo umount /dev/mmcblk0; sudo mkfs.vfat -F 32 /dev/mmcblk0;
+2. bzip2 -d -f core-image-minimal-raspberrypi5.rootfs.wic.bz2
+3. cd build/tmp/deploy/images/raspberrypi5/
+4. sudo dd if=core-image-minimal-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
 
 
 ----------------------Debug Probe Serial Communication----------------------------
