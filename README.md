@@ -1,6 +1,7 @@
 README.poky.md
 
 ----------------------Add WiFi Recipe in Yocto-----------------------------
+
 1. Add below commands in local.conf file:
 	IMAGE_INSTALL:append = " wpa-supplicant"
 2. Create wpa-supplicant_%.bbappend (% is same version as wpa-supplicant_%.bb)in /meta/recipes-connectivity/wpa-supplicant/ and add below commands:
@@ -31,3 +32,15 @@ README.poky.md
 	(OR)
 	DISTRO_FEATURES:remove = " systemd"
 	VIRTUAL-RUNTIME_init_manager = "sysvinit"
+
+
+----------------------Flash Image on Memory Card-----------------------------
+
+1. bzip2 -d -f core-image-minimal-raspberrypi5.rootfs.wic.bz2
+2. cd build/tmp/deploy/images/raspberrypi5/
+3. sudo dd if=core-image-minimal-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
+
+
+----------------------Debug Probe Serial Communication----------------------------
+
+1. minicom -b 115200 -o -D /dev/ttyACM0
