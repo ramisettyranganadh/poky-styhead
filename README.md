@@ -1,8 +1,8 @@
 README.poky.md
 ----------------------Start Yocto with Layers------------------------------
 
-1. git clone https://github.com/yoctoproject/poky.git
-2. git clone https://github.com/agherzan/meta-raspberrypi.git
+1. git clone https://github.com/yoctoproject/poky.git; git checkout origin/styhead
+2. git clone https://github.com/agherzan/meta-raspberrypi.git;
 
 ----------------------Add WiFi Recipe in Yocto-----------------------------
 
