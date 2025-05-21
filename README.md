@@ -22,9 +22,11 @@ README.poky.md
 4. bzip2 -d -f core-image-base-raspberrypi5.rootfs.wic.bz2
 5. sudo dd if=core-image-base-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
 
-----------------------Debug Probe Serial Communication----------------------------
+----------------------Debug Probe Serial Communication---------------------
 
 1. minicom -b 115200 -o -D /dev/ttyACM0
+2. Press any Key within 3 Seconds to U-BOOT
+3. printenv; env set ranganadh ramisetty; printenv ranganadh;
 
 ----------------------Add WiFi Recipe in Yocto-----------------------------
 
