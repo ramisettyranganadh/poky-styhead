@@ -2,10 +2,17 @@ README.poky.md
 
 ----------------------Start Yocto with Layers------------------------------
 
-1. git clone https://github.com/yoctoproject/poky.git; git checkout origin/styhead
-2. git clone https://github.com/agherzan/meta-raspberrypi.git;
+1. mkdir Yocto; cd Yocto;
+2. git clone https://github.com/yoctoproject/poky.git; git checkout origin/styhead;
+3. git clone https://github.com/agherzan/meta-raspberrypi.git;
+4. cd poky; source oe-init-build-env
+5. bitbake-layers add-layer meta-raspberrypi;
 
-----------------------Start Yocto with Layers------------------------------
+----------------------Add in local.conf file ------------------------------
+
+1. MACHINE = "raspberrypi5"
+2. LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+3. RPI_USE_U_BOOT = "1"
 
 ----------------------Add WiFi Recipe in Yocto-----------------------------
 
