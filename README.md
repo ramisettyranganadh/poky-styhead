@@ -5,6 +5,8 @@ README.poky.md
 1. git clone https://github.com/yoctoproject/poky.git; git checkout origin/styhead
 2. git clone https://github.com/agherzan/meta-raspberrypi.git;
 
+----------------------Start Yocto with Layers------------------------------
+
 ----------------------Add WiFi Recipe in Yocto-----------------------------
 
 1. Add below commands in local.conf file:
@@ -44,10 +46,9 @@ README.poky.md
 ----------------------Flash Image on Memory Card-----------------------------
 
 1. lsblk; sudo umount /dev/mmcblk0; sudo mkfs.vfat -F 32 /dev/mmcblk0;
-2. bzip2 -d -f core-image-minimal-raspberrypi5.rootfs.wic.bz2
-3. cd build/tmp/deploy/images/raspberrypi5/
+2. cd build/tmp/deploy/images/raspberrypi5/
+3. bzip2 -d -f core-image-minimal-raspberrypi5.rootfs.wic.bz20
 4. sudo dd if=core-image-minimal-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
-
 
 ----------------------Debug Probe Serial Communication----------------------------
 
