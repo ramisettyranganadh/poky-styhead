@@ -14,6 +14,18 @@ README.poky.md
 2. LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 3. RPI_USE_U_BOOT = "1"
 
+-------------------Build & Flash Image on SD Card--------------------------
+
+1. sudo apparmor_parser -R /etc/apparmor.d/unprivileged_userns; bitbake core-image-base;
+2. lsblk; sudo umount /dev/mmcblk0; sudo mkfs.vfat -F 32 /dev/mmcblk0;
+3. cd build/tmp/deploy/images/raspberrypi5/
+4. bzip2 -d -f core-image-base-raspberrypi5.rootfs.wic.bz20
+5. sudo dd if=core-image-base-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
+
+----------------------Debug Probe Serial Communication----------------------------
+
+1. minicom -b 115200 -o -D /dev/ttyACM0
+
 ----------------------Add WiFi Recipe in Yocto-----------------------------
 
 1. Add below commands in local.conf file:
@@ -21,7 +33,6 @@ README.poky.md
 2. Create wpa-supplicant_%.bbappend (% is same version as wpa-supplicant_%.bb)in /meta/recipes-connectivity/wpa-supplicant/ and add below commands:
 	SYSTEMD_AUTO_ENABLE:wpa-supplicant = "enable"
 	SYSTEMD_SERVICE:wpa-supplicant = "wpa_supplicant.service"
-
 3. Add below commands in /meta/recipes-connectivity/wpa-supplicant/wpa-supplicant.conf file:
 	ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 	update_config=1
@@ -50,13 +61,3 @@ README.poky.md
 7. bitbake core-image-minimal -c cleanall
 8. bitbake core-image-minimal
 
-----------------------Flash Image on Memory Card-----------------------------
-
-1. lsblk; sudo umount /dev/mmcblk0; sudo mkfs.vfat -F 32 /dev/mmcblk0;
-2. cd build/tmp/deploy/images/raspberrypi5/
-3. bzip2 -d -f core-image-minimal-raspberrypi5.rootfs.wic.bz20
-4. sudo dd if=core-image-minimal-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
-
-----------------------Debug Probe Serial Communication----------------------------
-
-1. minicom -b 115200 -o -D /dev/ttyACM0
