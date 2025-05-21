@@ -18,7 +18,7 @@ README.poky.md
 
 1. sudo apparmor_parser -R /etc/apparmor.d/unprivileged_userns; bitbake core-image-base;
 2. lsblk; sudo umount /dev/mmcblk0; sudo mkfs.vfat -F 32 /dev/mmcblk0;
-3. cd build/tmp/deploy/images/raspberrypi5/
+3. cd tmp/deploy/images/raspberrypi5/
 4. bzip2 -d -f core-image-base-raspberrypi5.rootfs.wic.bz20
 5. sudo dd if=core-image-base-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
 
