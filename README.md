@@ -6,7 +6,7 @@ README.poky.md
 2. git clone https://github.com/yoctoproject/poky.git; git checkout origin/styhead;
 3. git clone https://github.com/agherzan/meta-raspberrypi.git;
 4. cd poky; source oe-init-build-env
-5. bitbake-layers add-layer meta-raspberrypi;
+5. bitbake-layers add-layer ../../meta-raspberrypi;
 
 ----------------------Add in local.conf file ------------------------------
 
