@@ -1,6 +1,7 @@
 README.poky.md
 
-sudo apt-get install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 liblz4-tool locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
+1. sudo apt-get install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 liblz4-tool locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
+2. sudo apparmor_parser -R /etc/apparmor.d/unprivileged_userns; bitbake core-image-base;
 
 ----------------------Start Yocto with Layers------------------------------
 
