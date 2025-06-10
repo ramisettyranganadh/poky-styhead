@@ -18,6 +18,14 @@ Add in local.conf:
 2. LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 3. RPI_USE_U_BOOT = "1"
 
+For Beagle Bone Black :
+1. git clone https://github.com/Angstrom-distribution/meta-ti.git;
+2. cd poky; source oe-init-build-env
+3. bitbake-layers add-layer ../../meta-ti;
+Add in local.conf:
+1. MACHINE = "beaglebone-yocto"
+2. LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+
 -------------------Build & Flash Image on SD Card--------------------------
 
 1. sudo apparmor_parser -R /etc/apparmor.d/unprivileged_userns; bitbake core-image-base;
