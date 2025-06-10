@@ -40,6 +40,14 @@ Add in local.conf:
 2. Press any Key within 3 Seconds to U-BOOT
 3. printenv; env set ranganadh ramisetty; printenv ranganadh;
 
+--------------------------Custom Yocto Layer-------------------------------
+
+1. git clone https://github.com/ramisettyranganadh/PROJECT-YOC.git
+2. bitbake-layers create-layer meta-mylayer (OR)
+   git clone https://github.com/ramisettyranganadh/PROJECT-MLR.git
+3. cd PROJECT-YOC; source oe-init-build-env;
+4. bitbake-layers add-layer ../../PROJECT-MLR;
+
 ----------------------Add WiFi Recipe in Yocto-----------------------------
 
 1. Add below commands in local.conf file:
